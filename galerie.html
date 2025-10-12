@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie d'art impressionniste de Kety - Collection complète de peintures">
+    <meta name="keywords" content="art, impressionnisme, peinture, galerie, tableaux, Kety">
+    <title>Galerie - Pinakes Zeografikis</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-links">
+                <a href="index.html" data-lang-key="nav.home">Accueil</a>
+                <a href="galerie.html" data-lang-key="nav.gallery">Galerie</a>
+            </nav>
+            
+            <div class="language-selector">
+                <button onclick="changeLanguage('gr')" id="btn-gr" data-lang="gr">Ελληνικά</button>
+                <button onclick="changeLanguage('en')" id="btn-en" data-lang="en" class="active">English</button>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="main-title">Pinakes Zeografikis</h1>
+            
+            <div class="gallery">
+                <!-- Image 1 -->
+                <div class="artwork" onclick="openModal('DEL_1694')">
+                    <img src="images/thumbnails/thumb_DEL_1694.JPG" alt="Paysage impressionniste - Lumière dorée" loading="lazy">
+                </div>
+                
+                <!-- Image 2 -->
+                <div class="artwork" onclick="openModal('DEL_1697')">
+                    <img src="images/thumbnails/thumb_DEL_1697.JPG" alt="Nature morte aux fleurs" loading="lazy">
+                </div>
+                
+                <!-- Image 3 -->
+                <div class="artwork" onclick="openModal('DEL_1701')">
+                    <img src="images/thumbnails/thumb_DEL_1701.JPG" alt="Scène de rue parisienne" loading="lazy">
+                </div>
+                
+                <!-- Image 5 -->
+                <div class="artwork" onclick="openModal('DEL_1708')">
+                    <img src="images/thumbnails/thumb_DEL_1708.JPG" alt="Reflets sur l'eau" loading="lazy">
+                </div>
+                
+                <!-- Image 6 -->
+                <div class="artwork" onclick="openModal('DEL_1712')">
+                    <img src="images/thumbnails/thumb_DEL_1712.JPG" alt="Portrait au soleil couchant" loading="lazy">
+                </div>
+                
+                <!-- Image 7 -->
+                <div class="artwork" onclick="openModal('DEL_1716')">
+                    <img src="images/thumbnails/thumb_DEL_1716.JPG" alt="Café en terrasse" loading="lazy">
+                </div>
+                
+                <!-- Image 8 -->
+                <div class="artwork" onclick="openModal('DEL_1719')">
+                    <img src="images/thumbnails/thumb_DEL_1719.JPG" alt="Champs de lavande" loading="lazy">
+                </div>
+                
+                <!-- Image 9 -->
+                <div class="artwork" onclick="openModal('DEL_1722')">
+                    <img src="images/thumbnails/thumb_DEL_1722.JPG" alt="Marine au crépuscule" loading="lazy">
+                </div>
+                
+                <!-- Image 10 -->
+                <div class="artwork" onclick="openModal('DEL_1727')">
+                    <img src="images/thumbnails/thumb_DEL_1727.JPG" alt="Bouquet de pivoines" loading="lazy">
+                </div>
+                
+                <!-- Image 11 -->
+                <div class="artwork" onclick="openModal('DEL_1731')">
+                    <img src="images/thumbnails/thumb_DEL_1731.JPG" alt="Promenade au parc" loading="lazy">
+                </div>
+                <!-- Image 12 -->
+                <div class="artwork" onclick="openModal('DEL_1752')">
+                    <img src="images/thumbnails/thumb_DEL_1752.JPG" alt="Jardin secret" loading="lazy">
+                </div>
+                
+                <!-- Image 13 -->
+                <div class="artwork" onclick="openModal('DEL_1757')">
+                    <img src="images/thumbnails/thumb_DEL_1757.JPG" alt="Balcon fleuri" loading="lazy">
+                </div>
+                
+                <!-- Image 14 -->
+                <div class="artwork" onclick="openModal('DEL_1761')">
+                    <img src="images/thumbnails/thumb_DEL_1761.JPG" alt="Symphonie automnale" loading="lazy">
+                </div>
+                <!-- Image 15 -->
+                <div class="artwork" onclick="openModal('DEL_1736')">
+                    <img src="images/thumbnails/thumb_DEL_1736.JPG" alt="Maison de campagne" loading="lazy">
+                </div>
+                
+                <!-- Image 16 -->
+                <div class="artwork" onclick="openModal('DEL_1742')">
+                    <img src="images/thumbnails/thumb_DEL_1742.JPG" alt="Marché aux fleurs" loading="lazy">
+                </div>
+                
+                <!-- Image 17 -->
+                <div class="artwork" onclick="openModal('DEL_1746')">
+                    <img src="images/thumbnails/thumb_DEL_1746.JPG" alt="Coucher de soleil sur la Seine" loading="lazy">
+                </div>
+                
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modales pour chaque image -->
+    <!-- Modal 1 -->
+    <div id="modal-DEL_1694" class="modal" onclick="closeModal('DEL_1694')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1694')">&times;</span>
+            <img src="images/DEL_1694.JPG" class="modal-content" id="zoom-img-DEL_1694" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1694-gr">
+                    <h3>Χρυσαφένιο Φως</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα τοπίο γεμάτο ζεστό, χρυσαφένιο φως που αιχμαλωτίζει τη μαγεία της χρυσής ώρας.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1694-en">
+                    <h3>Golden Light</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A landscape filled with warm, golden light that captures the magic of the golden hour.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal-DEL_1697" class="modal" onclick="closeModal('DEL_1697')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1697')">&times;</span>
+            <img src="images/DEL_1697.JPG" class="modal-content" id="zoom-img-DEL_1697" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1697-gr">
+                    <h3>Άνθη της Άνοιξης</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια νεκρή φύση με λουλούδια που εκφράζει τη φρεσκάδα και τη ζωντάνια της άνοιξης.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1697-en">
+                    <h3>Spring Blossoms</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A still life with flowers expressing the freshness and vitality of spring.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal-DEL_1701" class="modal" onclick="closeModal('DEL_1701')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1701')">&times;</span>
+            <img src="images/DEL_1701.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1701-gr">
+                    <h3>Παριζιάνικη Σκηνή</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια σκηνή από τους δρόμους του Παρισιού με το χαρακτηριστικό φως της πόλης.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1701-en">
+                    <h3>Parisian Street Scene</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A scene from the streets of Paris with the city's characteristic light.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal-DEL_1708" class="modal" onclick="closeModal('DEL_1708')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1708')">&times;</span>
+            <img src="images/DEL_1708.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1708-gr">
+                    <h3>Αντανακλάσεις στο Νερό</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα έργο που αποτυπώνει τις μαγικές αντανακλάσεις του φωτός στην επιφάνεια του νερού.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1708-en">
+                    <h3>Water Reflections</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A work capturing the magical reflections of light on the water's surface.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div id="modal-DEL_1712" class="modal" onclick="closeModal('DEL_1712')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1712')">&times;</span>
+            <img src="images/DEL_1712.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1712-gr">
+                    <h3>Πορτρέτο στο Ηλιοβασίλεμα</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα πορτρέτο φωτισμένο από το μαλακό φως του ηλιοβασιλέματος.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1712-en">
+                    <h3>Sunset Portrait</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A portrait illuminated by the soft light of sunset.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div id="modal-DEL_1716" class="modal" onclick="closeModal('DEL_1716')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1716')">&times;</span>
+            <img src="images/DEL_1716.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1716-gr">
+                    <h3>Βεράντα Καφενείου</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια ζωντανή σκηνή από τη βεράντα ενός καφενείου με την ατμόσφαιρα της πόλης.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1716-en">
+                    <h3>Café Terrace</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A lively scene from a café terrace with the city's atmosphere.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div id="modal-DEL_1719" class="modal" onclick="closeModal('DEL_1719')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1719')">&times;</span>
+            <img src="images/DEL_1719.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1719-gr">
+                    <h3>Χωράφια Λεβάντας</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια ποιητική απεικόνιση των χωραφιών λεβάντας με τα χαρακτηριστικά μωβ χρώματα.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1719-en">
+                    <h3>Lavender Fields</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A poetic depiction of lavender fields with their characteristic purple hues.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 9 -->
+    <div id="modal-DEL_1722" class="modal" onclick="closeModal('DEL_1722')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1722')">&times;</span>
+            <img src="images/DEL_1722.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1722-gr">
+                    <h3>Θαλασσινό Τοπίο στο Λυκόφως</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια μαγευτική θέα της θάλασσας κατά τη διάρκεια του λυκόφωτος με απαλά χρώματα.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1722-en">
+                    <h3>Twilight Seascape</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>An enchanting view of the sea during twilight with soft colors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 10 -->
+    <div id="modal-DEL_1727" class="modal" onclick="closeModal('DEL_1727')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1727')">&times;</span>
+            <img src="images/DEL_1727.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1727-gr">
+                    <h3>Μπουκέτο Παιωνιών</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια εκπληκτική νεκρή φύση με παιώνιες που αποπνέει φρεσκάδα και ομορφιά.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1727-en">
+                    <h3>Peony Bouquet</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A stunning still life with peonies that exudes freshness and beauty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 11 -->
+    <div id="modal-DEL_1731" class="modal" onclick="closeModal('DEL_1731')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1731')">&times;</span>
+            <img src="images/DEL_1731.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1731-gr">
+                    <h3>Βόλτα στο Πάρκο</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια ήρεμη σκηνή από έναν περίπατο στο πάρκο με το φυσικό φως να διαπερνά τα δέντρα.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1731-en">
+                    <h3>Park Stroll</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A peaceful scene of a walk in the park with natural light filtering through the trees.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 12 -->
+    <div id="modal-DEL_1752" class="modal" onclick="closeModal('DEL_1752')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1752')">&times;</span>
+            <img src="images/DEL_1752.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1752-gr">
+                    <h3>Μυστικός Κήπος</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένας κρυφός κήπος γεμάτος μυστήριο και φυσική ομορφιά.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1752-en">
+                    <h3>Secret Garden</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A hidden garden full of mystery and natural beauty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 13 -->
+    <div id="modal-DEL_1757" class="modal" onclick="closeModal('DEL_1757')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1757')">&times;</span>
+            <img src="images/DEL_1757.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1757-gr">
+                    <h3>Ανθισμένο Μπαλκόνι</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα χαρούμενο μπαλκόνι γεμάτο λουλούδια που φέρνει ζωή και χρώμα στον αστικό χώρο.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1757-en">
+                    <h3>Flowered Balcony</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A joyful balcony full of flowers that brings life and color to the urban space.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 14 -->
+    <div id="modal-DEL_1761" class="modal" onclick="closeModal('DEL_1761')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1761')">&times;</span>
+            <img src="images/DEL_1761.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1761-gr">
+                    <h3>Φθινοπωρινή Συμφωνία</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια συμφωνία χρωμάτων και φωτός που αποτυπώνει την ομορφιά του φθινοπώρου.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1761-en">
+                    <h3>Autumn Symphony</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A symphony of colors and light that captures the beauty of autumn.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 15 -->
+    <div id="modal-DEL_1736" class="modal" onclick="closeModal('DEL_1736')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1736')">&times;</span>
+            <img src="images/DEL_1736.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1736-gr">
+                    <h3>Εξοχικό Σπίτι</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα παραδοσιακό εξοχικό σπίτι μέσα σε ένα ιδυλλιακό φυσικό τοπίο.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1736-en">
+                    <h3>Country House</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A traditional country house nestled in an idyllic natural landscape.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 16 -->
+    <div id="modal-DEL_1742" class="modal" onclick="closeModal('DEL_1742')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1742')">&times;</span>
+            <img src="images/DEL_1742.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1742-gr">
+                    <h3>Αγορά Ανθέων</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Μια ζωντανή σκηνή από μια αγορά ανθέων με πλήθος χρωμάτων και αρωμάτων.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1742-en">
+                    <h3>Flower Market</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A vibrant scene from a flower market with an abundance of colors and fragrances.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 17 -->
+    <div id="modal-DEL_1746" class="modal" onclick="closeModal('DEL_1746')">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal('DEL_1746')">&times;</span>
+            <img src="images/DEL_1746.JPG" class="modal-content" onclick="toggleZoom(this)">
+            <div class="description">
+                <div class="lang-content" id="desc-DEL_1746-gr">
+                    <h3>Ηλιοβασίλεμα στον Σηκουάνα</h3>
+                    <p><em>2023</em></p>
+                    <p>Τεχνική: Λάδι σε καμβά</p>
+                    <p>Ένα μαγευτικό ηλιοβασίλεμα πάνω από τα νερά του Σηκουάνα στο Παρίσι.</p>
+                </div>
+                <div class="lang-content active" id="desc-DEL_1746-en">
+                    <h3>Seine Sunset</h3>
+                    <p><em>2023</em></p>
+                    <p>Technique: Oil on canvas</p>
+                    <p>A magical sunset over the waters of the Seine in Paris.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

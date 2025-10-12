@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie d'art de Kety - Pinakes Zeografikis. Découvrez une collection unique de peintures.">
+    <meta name="keywords" content="art, impressionnisme, peinture, Kety, galerie, tableaux">
+    <meta name="author" content="Kety">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pinakes Zeografikis - Galerie d'Art Impressionniste">
+    <meta property="og:description" content="Découvrez l'univers artistique de Kety à travers sa collection de peintures impressionnistes.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Pinakes Zeografikis - Galerie d'Art Impressionniste">
+    <meta property="twitter:description" content="Découvrez l'univers artistique de Kety à travers sa collection de peintures impressionnistes.">
+    
+    <title>Pinakes Zeografikis - Galerie d'Art Impressionniste</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Police Bergstena Script alternative avec Dancing Script */
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-links">
+                <a href="index.html" data-lang-key="nav.home">Accueil</a>
+                <a href="galerie.html" data-lang-key="nav.gallery">Galerie</a>
+            </nav>
+            
+            <div class="language-selector">
+                <button onclick="changeLanguage('gr')" id="btn-gr" data-lang="gr">Ελληνικά</button>
+                <button onclick="changeLanguage('en')" id="btn-en" data-lang="en" class="active">English</button>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="main-title">Pinakes Zeografikis</h1>
+            
+            <div class="artist-description">
+                <!-- Contenu en grec -->
+                <div class="lang-content" id="content-gr">
+                    <h2>Kety</h2>
+                    <p>Η Kety είναι μια σύγχρονη καλλιτέχνιδα που εμπνέεται από την ιμπρεσιονιστική παράδοση. Τα έργα της χαρακτηρίζονται από ζωντανά χρώματα, λεπτές πινελιές και μια μοναδική ικανότητα να αιχμαλωτίζει το φως και την ατμόσφαιρα.</p>
+                    
+                    <p>Μέσα από τους πίνακές της, η καλλιτέχνιδα εξερευνά τη σχέση μεταξύ φύσης και συναισθήματος, δημιουργώντας έργα που μεταφέρουν τον θεατή σε έναν κόσμο γεμάτο ποίηση και ομορφιά.</p>
+                    
+                    <p>Η συλλογή "Pinakes Zeografikis" παρουσιάζει μια επιλογή από τα πιο αντιπροσωπευτικά έργα της, αποτυπώνοντας την εξέλιξη του καλλιτεχνικού της ύφους και την προσωπική της ματιά στον ιμπρεσιονισμό.</p>
+                </div>
+                
+                <!-- Contenu en anglais -->
+                <div class="lang-content active" id="content-en">
+                    <h2>Kety</h2>
+                    <p>Kety is a contemporary artist inspired by the impressionist tradition. Her works are characterized by vibrant colors, delicate brushstrokes, and a unique ability to capture light and atmosphere.</p>
+                    
+                    <p>Through her paintings, the artist explores the relationship between nature and emotion, creating works that transport the viewer to a world full of poetry and beauty.</p>
+                    
+                    <p>The "Pinakes Zeografikis" collection presents a selection of her most representative works, capturing the evolution of her artistic style and her personal vision of impressionism.</p>
+                </div>
+            </div>
+            
+            <a href="galerie.html" class="gallery-button" data-lang-key="button.gallery">
+                <span class="lang-content" id="btn-text-gr">Γκαλερί</span>
+                <span class="lang-content active" id="btn-text-en">Gallery</span>
+            </a>
+        </main>
+        
+        <footer style="text-align: center; padding: 40px 0; border-top: 1px solid rgba(58, 58, 58, 0.1); margin-top: 60px;">
+            <p style="color: #666; font-size: 14px;">
+                <span class="lang-content" id="footer-gr">© 2024 Kety. Όλα τα δικαιώματα διατηρούνται.</span>
+                <span class="lang-content active" id="footer-en">© 2024 Kety. All rights reserved.</span>
+            </p>
+        </footer>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
