@@ -91,6 +91,39 @@ Le site attend 17 images nommées :
 - **Titre** : Dancing Script (alternative à Bergstena Script)
 - **Texte** : Open Sans
 
+## 📋 OpenSpec Change Management
+
+This project uses **OpenSpec** for structured change management. All changes follow an artifact-driven workflow:
+
+### Workflow
+1. **Proposal** (`proposal.md`) - Why this change is needed
+2. **Design** (`design.md`) - How to implement it  
+3. **Specs** (`specs/<capability>/spec.md`) - What requirements must be met
+4. **Tasks** (`tasks.md`) - Implementation checklist
+
+### Commands
+```bash
+# Start a new change
+openspec new change <name>
+
+# Check status
+openspec status --change <name>
+
+# Get instructions for an artifact
+openspec instructions <artifact> --change <name>
+
+# Validate a change
+openspec verify --change <name>
+
+# Archive completed change
+openspec archive --change <name>
+```
+
+### Project Specs
+Project capabilities are documented in `openspec/specs/`:
+- `change-management/` - OpenSpec workflow requirements
+- `project-documentation/` - Capability specification format
+
 ## 📞 Support
 
 Pour toute question ou modification, consultez la documentation du code ou contactez le développeur.
