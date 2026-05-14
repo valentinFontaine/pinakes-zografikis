@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         .main-title {
@@ -38,80 +39,80 @@
             
             <div class="gallery">
                 <!-- Image 1 -->
-                <div class="artwork" onclick="openModal('DEL_1694')">
+                <div class="artwork" onclick="openModal('DEL_1694')" data-painting-id="DEL_1694">
                     <img src="images/thumbnails/thumb_DEL_1694.JPG" alt="Light in a vase" loading="lazy">
                 </div>
                 
                 <!-- Image 2 -->
-                <div class="artwork" onclick="openModal('DEL_1697')">
+                <div class="artwork" onclick="openModal('DEL_1697')" data-painting-id="DEL_1697">
                     <img src="images/thumbnails/thumb_DEL_1697.JPG" alt="Nature morte aux fleurs" loading="lazy">
                 </div>
                 
                 <!-- Image 3 -->
-                <div class="artwork" onclick="openModal('DEL_1701')">
+                <div class="artwork" onclick="openModal('DEL_1701')" data-painting-id="DEL_1701">
                     <img src="images/thumbnails/thumb_DEL_1701.JPG" alt="Scène de rue parisienne" loading="lazy">
                 </div>
                 
                 <!-- Image 5 -->
-                <div class="artwork" onclick="openModal('DEL_1708')">
+                <div class="artwork" onclick="openModal('DEL_1708')" data-painting-id="DEL_1708">
                     <img src="images/thumbnails/thumb_DEL_1708.JPG" alt="Reflets sur l'eau" loading="lazy">
                 </div>
                 
                 <!-- Image 6 -->
-                <div class="artwork" onclick="openModal('DEL_1712')">
+                <div class="artwork" onclick="openModal('DEL_1712')" data-painting-id="DEL_1712">
                     <img src="images/thumbnails/thumb_DEL_1712.JPG" alt="Portrait au soleil couchant" loading="lazy">
                 </div>
                 
                 <!-- Image 7 -->
-                <div class="artwork" onclick="openModal('DEL_1716')">
+                <div class="artwork" onclick="openModal('DEL_1716')" data-painting-id="DEL_1716">
                     <img src="images/thumbnails/thumb_DEL_1716.JPG" alt="Café en terrasse" loading="lazy">
                 </div>
                 
                 <!-- Image 8 -->
-                <div class="artwork" onclick="openModal('DEL_1719')">
+                <div class="artwork" onclick="openModal('DEL_1719')" data-painting-id="DEL_1719">
                     <img src="images/thumbnails/thumb_DEL_1719.JPG" alt="Champs de lavande" loading="lazy">
                 </div>
                 
                 <!-- Image 9 -->
-                <div class="artwork" onclick="openModal('DEL_1722')">
+                <div class="artwork" onclick="openModal('DEL_1722')" data-painting-id="DEL_1722">
                     <img src="images/thumbnails/thumb_DEL_1722.JPG" alt="Marine au crépuscule" loading="lazy">
                 </div>
                 
                 <!-- Image 10 -->
-                <div class="artwork" onclick="openModal('DEL_1727')">
+                <div class="artwork" onclick="openModal('DEL_1727')" data-painting-id="DEL_1727">
                     <img src="images/thumbnails/thumb_DEL_1727.JPG" alt="Bouquet de pivoines" loading="lazy">
                 </div>
                 
                 <!-- Image 11 -->
-                <div class="artwork" onclick="openModal('DEL_1731')">
+                <div class="artwork" data-painting-id="DEL_1731" onclick="openModal('DEL_1731')">
                     <img src="images/thumbnails/thumb_DEL_1731.JPG" alt="Promenade au parc" loading="lazy">
                 </div>
                 <!-- Image 12 -->
-                <div class="artwork" onclick="openModal('DEL_1752')">
+                <div class="artwork" data-painting-id="DEL_1752" onclick="openModal('DEL_1752')">
                     <img src="images/thumbnails/thumb_DEL_1752.JPG" alt="Jardin secret" loading="lazy">
                 </div>
                 
                 <!-- Image 13 -->
-                <div class="artwork" onclick="openModal('DEL_1757')">
+                <div class="artwork" data-painting-id="DEL_1757" onclick="openModal('DEL_1757')">
                     <img src="images/thumbnails/thumb_DEL_1757.JPG" alt="Balcon fleuri" loading="lazy">
                 </div>
                 
                 <!-- Image 14 -->
-                <div class="artwork" onclick="openModal('DEL_1761')">
+                <div class="artwork" data-painting-id="DEL_1761" onclick="openModal('DEL_1761')">
                     <img src="images/thumbnails/thumb_DEL_1761.JPG" alt="Symphonie automnale" loading="lazy">
                 </div>
                 <!-- Image 15 -->
-                <div class="artwork" onclick="openModal('DEL_1736')">
+                <div class="artwork" data-painting-id="DEL_1736" onclick="openModal('DEL_1736')">
                     <img src="images/thumbnails/thumb_DEL_1736.JPG" alt="Maison de campagne" loading="lazy">
                 </div>
                 
                 <!-- Image 16 -->
-                <div class="artwork" onclick="openModal('DEL_1742')">
+                <div class="artwork" data-painting-id="DEL_1742" onclick="openModal('DEL_1742')">
                     <img src="images/thumbnails/thumb_DEL_1742.JPG" alt="Marché aux fleurs" loading="lazy">
                 </div>
                 
                 <!-- Image 17 -->
-                <div class="artwork" onclick="openModal('DEL_1746')">
+                <div class="artwork" data-painting-id="DEL_1746" onclick="openModal('DEL_1746')">
                     <img src="images/thumbnails/thumb_DEL_1746.JPG" alt="Coucher de soleil sur la Seine" loading="lazy">
                 </div>
                 
@@ -126,17 +127,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1694')">&times;</span>
             <img src="images/DEL_1694.JPG" class="modal-content" id="zoom-img-DEL_1694" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1694-gr">
-                    <h3>Φως σε ένα Βάζο</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1694-en">
-                    <h3>Light in a Vase</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 2 -->
@@ -144,17 +135,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1697')">&times;</span>
             <img src="images/DEL_1697.JPG" class="modal-content" id="zoom-img-DEL_1697" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1697-gr">
-                    <h3>Ζωή των Ψαράδων</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1697-en">
-                    <h3>Fishermen Life</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 3 -->
@@ -162,17 +143,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1701')">&times;</span>
             <img src="images/DEL_1701.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1701-gr">
-                    <h3>Σκηνή Εξοχικού</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1701-en">
-                    <h3>Cottage Scene</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 5 -->
@@ -180,17 +151,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1708')">&times;</span>
             <img src="images/DEL_1708.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1708-gr">
-                    <h3>Μπουκέτο Παιώνιες</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1708-en">
-                    <h3>Peony Bouquet</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 6 -->
@@ -198,18 +159,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1712')">&times;</span>
             <img src="images/DEL_1712.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1712-gr">
-                    <h3>Αντανακλάσεις στο Νερό</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1712-en">
-                    <h3>Water Reflections</h3>
-                    <p><em>2023</em></p>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 7 -->
@@ -217,17 +167,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1716')">&times;</span>
             <img src="images/DEL_1716.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1716-gr">
-                    <h3>Σπίτι στη Θάλασσα</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1716-en">
-                    <h3>House on the Sea</h3>
-                    <p>Technique: Oil on canvas / Spatule </p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 8 -->
@@ -235,17 +175,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1719')">&times;</span>
             <img src="images/DEL_1719.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1719-gr">
-                    <h3>Στενό</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1719-en">
-                    <h3>Ruelle</h3>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 9 -->
@@ -253,17 +183,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1722')">&times;</span>
             <img src="images/DEL_1722.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1722-gr">
-                    <h3>Λιμναίο Τοπίο</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1722-en">
-                    <h3>Lakespace</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 10 -->
@@ -271,17 +191,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1727')">&times;</span>
             <img src="images/DEL_1727.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1727-gr">
-                    <h3>Συμπόσιο</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1727-en">
-                    <h3>Banquet</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 11 -->
@@ -289,34 +199,14 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1731')">&times;</span>
             <img src="images/DEL_1731.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1731-gr">
-                    <h3>Βόλτα στους Δρόμους</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1731-en">
-                    <h3>Stroll in the streets</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
     <!-- Modal 12 -->
     <div id="modal-DEL_1752" class="modal" onclick="closeModal('DEL_1752')">
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1752')">&times;</span>
             <img src="images/DEL_1752.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1752-gr">
-                    <h3>Μυστικός Κήπος</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1752-en">
-                    <h3>Secret Garden</h3>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 13 -->
@@ -324,18 +214,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1757')">&times;</span>
             <img src="images/DEL_1757.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1757-gr">
-                    <h3>Ανθισμένο Τραπέζι</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1757-en">
-                    <h3>Flowered table</h3>
-                    <p><em>2023</em></p>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 14 -->
@@ -343,34 +222,14 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1761')">&times;</span>
             <img src="images/DEL_1761.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1761-gr">
-                    <h3>Φθινοπωρινή Μπλε Συμφωνία</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1761-en">
-                    <h3>Autumn Blue Symphony</h3>
-                    <p>Technique: Oil on canvas / Spatule</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
     <!-- Modal 15 -->
     <div id="modal-DEL_1736" class="modal" onclick="closeModal('DEL_1736')">
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1736')">&times;</span>
             <img src="images/DEL_1736.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1736-gr">
-                    <h3>Συλλογή Κόκκινο Άνθος</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1736-en">
-                    <h3>The Red Blossom Collection</h3>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 16 -->
@@ -378,17 +237,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1742')">&times;</span>
             <img src="images/DEL_1742.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1742-gr">
-                    <h3>Το Πράσινο</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1742-en">
-                    <h3>The Green</h3>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
 
     <!-- Modal 17 -->
@@ -396,17 +245,7 @@
         <div class="modal-content-wrapper" onclick="event.stopPropagation()">
             <span class="close" onclick="closeModal('DEL_1746')">&times;</span>
             <img src="images/DEL_1746.JPG" class="modal-content" onclick="toggleZoom(this)">
-            <div class="description">
-                <div class="lang-content" id="desc-DEL_1746-gr">
-                    <h3>Το Μαύρο</h3>
-                    <p>Τεχνική: Λάδι σε καμβά</p>
-                </div>
-                <div class="lang-content active" id="desc-DEL_1746-en">
-                    <h3>The Black</h3>
-                    <p>Technique: Oil on canvas</p>
-                </div>
-            </div>
-        </div>
+            <div class="description"></div>
     </div>
     <script src="js/script.js"></script>
 </body>

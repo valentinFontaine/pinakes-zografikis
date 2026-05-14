@@ -1,6 +1,205 @@
 // Gestion des langues
 let currentLanguage = 'en';
 
+// Painting data store
+const paintingsData = {};
+let markedAvailable = false;
+
+// Check if marked.js is loaded
+function checkMarked() {
+    return typeof marked !== 'undefined';
+}
+
+// Parse YAML frontmatter from markdown string
+function parseFrontmatter(markdown) {
+    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
+    const match = markdown.match(frontmatterRegex);
+    if (!match) {
+        return { metadata: {}, content: markdown };
+    }
+    
+    const frontmatter = match[1];
+    const metadata = {};
+    
+    // Simple YAML parsing for our fields (title, year, technique)
+    const lines = frontmatter.split('\n');
+    for (const line of lines) {
+        const colonIndex = line.indexOf(':');
+        if (colonIndex > 0) {
+            const key = line.substring(0, colonIndex).trim();
+            const value = line.substring(colonIndex + 1).trim();
+            // Remove quotes if present
+            const cleanValue = value.replace(/^["']|["']$/g, '');
+            metadata[key] = cleanValue;
+        }
+    }
+    
+    const content = markdown.substring(match[0].length);
+    return { metadata, content };
+}
+
+// Extract language sections from markdown content
+function extractLanguageSections(content) {
+    const sections = {
+        en: '',
+        gr: ''
+    };
+    
+    // Split by H1 headers
+    const parts = content.split(/^#\s+/gm);
+    
+    for (let i = 1; i < parts.length; i++) {
+        const header = parts[i-1].trim();
+        const sectionContent = parts[i].trim();
+        
+        if (header === 'Description-en') {
+            sections.en = sectionContent;
+        } else if (header === 'Description-gr') {
+            sections.gr = sectionContent;
+        }
+    }
+    
+    return sections;
+}
+
+// Load all painting markdown files
+async function loadAllPaintings() {
+    const paintingIds = [
+        'DEL_1694', 'DEL_1695', 'DEL_1696', 'DEL_1697', 'DEL_1698',
+        'DEL_1699', 'DEL_1700', 'DEL_1701', 'DEL_1702', 'DEL_1703',
+        'DEL_1704', 'DEL_1705', 'DEL_1706', 'DEL_1707', 'DEL_1708',
+        'DEL_1709', 'DEL_1710', 'DEL_1711', 'DEL_1712'
+    ];
+    
+    markedAvailable = checkMarked();
+    
+    const promises = paintingIds.map(async (id) => {
+        try {
+            const response = await fetch(`content/paintings/${id}.md`);
+            if (!response.ok) {
+                console.error(`Failed to load ${id}.md: ${response.status}`);
+                return null;
+            }
+            const markdown = await response.text();
+            const { metadata, content } = parseFrontmatter(markdown);
+            const sections = extractLanguageSections(content);
+            
+            paintingsData[id] = {
+                metadata,
+                sections
+            };
+            return id;
+        } catch (error) {
+            console.error(`Error loading ${id}.md:`, error);
+            return null;
+        }
+    });
+    
+    await Promise.all(promises);
+    console.log('All paintings loaded:', Object.keys(paintingsData));
+}
+
+// Render painting modal with markdown content
+function renderPaintingModal(paintingId, language) {
+    const painting = paintingsData[paintingId];
+    if (!painting) {
+        console.error(`No data for painting ${paintingId}`);
+        return;
+    }
+    
+    const modal = document.getElementById(`modal-${paintingId}`);
+    if (!modal) {
+        console.error(`Modal not found for ${paintingId}`);
+        return;
+    }
+    
+    const descriptionDiv = modal.querySelector('.description');
+    if (!descriptionDiv) {
+        console.error(`Description div not found for ${paintingId}`);
+        return;
+    }
+    
+    const langContent = painting.sections[language];
+    const metadata = painting.metadata;
+    
+    // Build HTML content
+    let htmlContent = '';
+    
+    if (metadata.title) {
+        htmlContent += `<h3>${metadata.title}</h3>`;
+    }
+    
+    if (metadata.year) {
+        htmlContent += `<p><em>${metadata.year}</em></p>`;
+    }
+    
+    if (metadata.technique) {
+        htmlContent += `<p>Technique: ${metadata.technique}</p>`;
+    }
+    
+    if (langContent) {
+        if (markedAvailable) {
+            htmlContent += marked.parse(langContent);
+        } else {
+            htmlContent += `<p>${langContent}</p>`;
+        }
+    }
+    
+    descriptionDiv.innerHTML = htmlContent;
+}
+
+// Override openModal to use markdown rendering
+function openModal(imageId) {
+    const modal = document.getElementById(`modal-${imageId}`);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        
+        // Render markdown content
+        renderPaintingModal(imageId, currentLanguage);
+        
+        modal.focus();
+    }
+}
+
+// Override changeLanguage to re-render modals
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    
+    document.querySelectorAll('.language-selector button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`btn-${lang}`).classList.add('active');
+    
+    // Hide all language content
+    document.querySelectorAll('.lang-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Show selected language content
+    document.querySelectorAll(`#content-${lang}, #btn-text-${lang}, #footer-${lang}`).forEach(content => {
+        content.classList.add('active');
+    });
+    
+    // Update translations
+    updateTranslations(lang);
+    
+    // Save preference
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Re-render any open modals with new language
+    document.querySelectorAll('.modal').forEach(modal => {
+        if (modal.style.display === 'block') {
+            const modalId = modal.id.replace('modal-', '');
+            renderPaintingModal(modalId, lang);
+        }
+    });
+}
+
 // Traductions
 const translations = {
     gr: {
@@ -18,9 +217,12 @@ const translations = {
 };
 
 // Initialisation au chargement de la page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Charger la langue par défaut
     loadLanguage();
+    
+    // Load all painting markdown files
+    await loadAllPaintings();
     
     // Ajouter les événements pour fermer les modales avec Escape
     document.addEventListener('keydown', function(e) {
