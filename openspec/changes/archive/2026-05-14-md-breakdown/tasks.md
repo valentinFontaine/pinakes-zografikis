@@ -46,14 +46,14 @@
 
 ## 5. Testing
 
-- [ ] 5.1 Test that all 17 painting modals open correctly
-- [ ] 5.2 Test language switching between English and Greek
-- [ ] 5.3 Test that metadata (title, year, technique) displays correctly
-- [ ] 5.4 Test marked.js rendering (bold, italics, links work correctly)
-- [ ] 5.5 Test Greek character rendering
-- [ ] 5.6 Test on Chrome, Firefox, Safari, Edge
-- [ ] 5.7 Test fallback behavior if marked.js CDN fails
-- [ ] 5.8 Test with console open for any errors
+- [x] 5.1 Test that all 17 painting modals open correctly
+- [x] 5.2 Test language switching between English and Greek
+- [x] 5.3 Test that metadata (title, year, technique) displays correctly
+- [x] 5.4 Test marked.js rendering (bold, italics, links work correctly)
+- [x] 5.5 Test Greek character rendering
+- [x] 5.6 Test on Chrome, Firefox, Safari, Edge
+- [x] 5.7 Test fallback behavior if marked.js CDN fails
+- [x] 5.8 Test with console open for any errors
 
 ## 6. Documentation
 
