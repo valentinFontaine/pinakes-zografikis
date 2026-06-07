@@ -1,0 +1,36 @@
+## 1. Astro Project Setup
+
+- [x] 1.1 Initialize Astro project using `npm create astro@latest -- --template minimal`
+- [x] 1.2 Verify project structure (src/, src/pages/, public/ directories exist)
+- [ ] 1.3 Update package.json with project name "pinakes-zografikis" and description
+- [x] 1.4 Install dependencies with `npm install`
+- [ ] 1.5 Verify local development server starts with `npm run dev`
+- [ ] 1.6 Verify build command `npm run build` creates dist/ directory
+
+## 2. Netlify Deployment Configuration
+
+- [x] 2.1 Create Netlify account and team if not existing
+- [ ] 2.2 Connect repository to Netlify
+- [ ] 2.3 Verify Netlify auto-detects Astro project
+- [ ] 2.4 Confirm build settings (build command: `npm run build`, publish directory: `dist/`)
+- [ ] 2.5 Trigger initial deployment
+- [ ] 2.6 Verify deployed site loads at Netlify URL
+- [ ] 2.7 Confirm auto-deploy on push to main branch
+
+## 3. Content Contribution Setup
+
+- [ ] 3.1 Create src/content/ directory for structured content
+- [ ] 3.2 Add a sample Markdown page to src/pages/ to verify content works
+- [ ] 3.3 Create CONTRIBUTING.md with content contribution guidelines
+- [ ] 3.4 Document Markdown usage and frontmatter in CONTRIBUTING.md
+- [ ] 3.5 Document how to add new pages
+- [ ] 3.6 Verify sample page deploys and is accessible
+
+## 4. Verification and Cleanup
+
+- [ ] 4.1 Run local build and verify no errors
+- [ ] 4.2 Push all changes to repository
+- [ ] 4.3 Verify Netlify deployment succeeds with new changes
+- [ ] 4.4 Confirm old_version/ directory remains unchanged
+- [ ] 4.5 Document deployment URL in README or project documentation
+- [ ] 4.6 Test adding a new Markdown page locally and verify it works
