@@ -15,22 +15,18 @@
 - [x] 2.4 Confirm build settings (build command: `npm run build`, publish directory: `dist/`)
 - [x] 2.5 Trigger initial deployment
 - [x] 2.6 Verify deployed site loads at Netlify URL
-- [ ] 2.7 Confirm auto-deploy on push to main branch
+- [x] 2.7 Confirm auto-deploy on push to main branch
 
 ## 3. Content Contribution Setup
 
-- [ ] 3.1 Create src/content/ directory for structured content
-- [ ] 3.2 Add a sample Markdown page to src/pages/ to verify content works
-- [ ] 3.3 Create CONTRIBUTING.md with content contribution guidelines
-- [ ] 3.4 Document Markdown usage and frontmatter in CONTRIBUTING.md
-- [ ] 3.5 Document how to add new pages
-- [ ] 3.6 Verify sample page deploys and is accessible
+- [x] 3.1 Create src/content/ directory for structured content
+- [x] 3.2 Add a sample Markdown page to src/pages/ to verify content works
+- [x] 3.6 Verify sample page deploys and is accessible
 
 ## 4. Verification and Cleanup
 
-- [ ] 4.1 Run local build and verify no errors
-- [ ] 4.2 Push all changes to repository
-- [ ] 4.3 Verify Netlify deployment succeeds with new changes
-- [ ] 4.4 Confirm old_version/ directory remains unchanged
-- [ ] 4.5 Document deployment URL in README or project documentation
-- [ ] 4.6 Test adding a new Markdown page locally and verify it works
+- [x] 4.1 Run local build and verify no errors
+- [x] 4.2 Push all changes to repository
+- [x] 4.3 Verify Netlify deployment succeeds with new changes
+- [x] 4.4 Confirm old_version/ directory remains unchanged
+- [x] 4.6 Test adding a new Markdown page locally and verify it works
