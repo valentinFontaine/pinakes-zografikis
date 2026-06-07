@@ -2,19 +2,19 @@
 
 - [x] 1.1 Initialize Astro project using `npm create astro@latest -- --template minimal`
 - [x] 1.2 Verify project structure (src/, src/pages/, public/ directories exist)
-- [ ] 1.3 Update package.json with project name "pinakes-zografikis" and description
+- [x] 1.3 Update package.json with project name "pinakes-zografikis" and description
 - [x] 1.4 Install dependencies with `npm install`
-- [ ] 1.5 Verify local development server starts with `npm run dev`
-- [ ] 1.6 Verify build command `npm run build` creates dist/ directory
+- [x] 1.5 Verify local development server starts with `npm run dev`
+- [x] 1.6 Verify build command `npm run build` creates dist/ directory
 
 ## 2. Netlify Deployment Configuration
 
 - [x] 2.1 Create Netlify account and team if not existing
-- [ ] 2.2 Connect repository to Netlify
-- [ ] 2.3 Verify Netlify auto-detects Astro project
-- [ ] 2.4 Confirm build settings (build command: `npm run build`, publish directory: `dist/`)
-- [ ] 2.5 Trigger initial deployment
-- [ ] 2.6 Verify deployed site loads at Netlify URL
+- [x] 2.2 Connect repository to Netlify
+- [x] 2.3 Verify Netlify auto-detects Astro project
+- [x] 2.4 Confirm build settings (build command: `npm run build`, publish directory: `dist/`)
+- [x] 2.5 Trigger initial deployment
+- [x] 2.6 Verify deployed site loads at Netlify URL
 - [ ] 2.7 Confirm auto-deploy on push to main branch
 
 ## 3. Content Contribution Setup
